@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  transition: all linear .5s;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-style: normal;

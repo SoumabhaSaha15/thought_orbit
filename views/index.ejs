@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="styles/aos.css">
   <link rel="icon" type="image/webp" href="assets/logo.webp" />
   <title>
     <%= title %>
@@ -35,44 +36,28 @@
       </div>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost text-xl text-blue-100">Thought Orbit</a>
+      <a class="btn btn-ghost text-xl text-blue-100 hover:animate-pulse">Thought Orbit</a>
     </div>
     <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
-      <button class="btn btn-ghost btn-circle">
-        <div class="indicator">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-          </svg>
-          <span class="badge badge-xs badge-primary indicator-item"></span>
-        </div>
-      </button>
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen">
+  <div class="hero bg-base-200 min-h-screen" >
     <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hello there</h1>
-        <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
+      <div class="max-w-lg">
+        <h1 class="text-5xl font-bold motion-preset-bounce">Hello there</h1>
+        <p class="py-6" data-aos="fade-up" data-aos-delay="500">
+          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from all walks of life. It's a space where bloggers, writers, and storytellers can orbit around diverse topics and express their thoughts freely. Whether you're passionate about technology, lifestyle, art, or personal growth, Thought Orbit provides the perfect launchpad for your ideas.
         </p>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-out" data-aos-delay="1000">Get Started</button>
       </div>
     </div>
   </div>
 
-  <footer class="footer bg-base-300 text-base-content p-10">
+  <footer class="footer bg-base-300 text-base-content p-10" data-aos="zoom-in" data-aos-delay="600">
     <aside>
       <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-        clip-rule="evenodd" class="fill-current">
+        clip-rule="evenodd" class="fill-current" style="border-radius: 10px;">
         <image href="assets/logo.webp" width="50" height="50" />
       </svg>
       <p>
@@ -103,5 +88,17 @@
     </nav>
   </footer>
 </body>
+<script src="scripts/aos.js"></script>
+<script>
+  AOS.init({
+    offset: 120,
+    delay: 0,
+    duration: 400,
+    easing: 'ease',
+    once: true,
+    mirror: false,
+    anchorPlacement: 'top-bottom'
+  });
+</script>
 
 </html>

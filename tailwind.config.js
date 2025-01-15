@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui'
+import daisyui from 'daisyui';
+import TWM from 'tailwindcss-motion';
 export default {
   mode: "jit",
   content: ["./public/**/*.html", "./views/**/*.ejs"],
@@ -34,5 +35,5 @@ export default {
       },
     ],
   },
-  plugins: [daisyui],
+  plugins: [daisyui,TWM],
 }
