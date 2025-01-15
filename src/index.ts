@@ -23,7 +23,7 @@ try {
     .use(Router)
     .set("view engine", "ejs")
     .set("views", path.join(import.meta.dirname, "./../views"))
-    .listen(process.env.PORT, (port) => {
+    .listen(process.env.PORT, () => {
       console.log(chalk.blue.bold(`running http://localhost:${process.env.PORT}`));
     });
 } catch (error) {
