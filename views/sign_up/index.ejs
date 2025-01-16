@@ -17,10 +17,10 @@
 
 <body class="bg-base-300 text-blue-100 min-h-screen mt-0 flex items-center justify-center">
   <form class="flex flex-col bg-base-100 shadow-lg p-12 align-middle items-center max-w-[50%] rounded-xl" method="POST"
-    action="/signup" data-aos="zoom-in" data-aos-duration="500">
+    action="/signup" data-aos="zoom-in" data-aos-duration="500" enctype="multipart/form-data">
 
     <label for="uploadFile"
-      class="bg-base-300 text-gray-500 font-semibold text-base rounded max-w-md h-52 flex flex-col items-center justify-center cursor-pointer border-2 border-base-300 border-dashed mx-auto font-[sans-serif]">
+      class="bg-base-300 bg-center bg-no-repeat bg-contain text-gray-500 font-semibold text-base rounded max-w-md h-52 flex flex-col items-center justify-center cursor-pointer border-2 border-base-300 border-dashed rounded-lg mx-auto font-[sans-serif] aspect-square">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-11 mb-2 fill-gray-500" viewBox="0 0 32 32">
         <path
           d="M23.75 11.044a7.99 7.99 0 0 0-15.5-.009A8 8 0 0 0 9 27h3a1 1 0 0 0 0-2H9a6 6 0 0 1-.035-12 1.038 1.038 0 0 0 1.1-.854 5.991 5.991 0 0 1 11.862 0A1.08 1.08 0 0 0 23 13a6 6 0 0 1 0 12h-3a1 1 0 0 0 0 2h3a8 8 0 0 0 .75-15.956z"
@@ -30,7 +30,7 @@
           data-original="#000000" />
       </svg>
       Upload file
-      <input type="file" name="avatar" required id='uploadFile' class="hidden" />
+      <input type="file" name="avatar" required id='uploadFile' class="hidden" accept=".png, .jpg, .jpeg" />
       <p class="text-xs font-medium text-gray-400 mt-2">JPG,PNG</p>
     </label>
     <br />
@@ -63,7 +63,17 @@
     mirror: false,
     anchorPlacement: 'top-bottom'
   });
-  document.getElementById('u')
+  document.getElementById('uploadFile').oninput = (event) => {
+    try {
+      if (event.target.files && (event.target.files)[0].size <= (5 * 1024 * 1024)) {
+        event.target.parentElement.style.backgroundImage = `url('${URL.createObjectURL(event.target.files[0])}')`;
+      } else {
+        window.alert('file is larger than 5 MB');
+      }
+    } catch (error) {
+      window.alert('file is larger than 5 MB');
+    }
+  }
 </script>
 
 </html>

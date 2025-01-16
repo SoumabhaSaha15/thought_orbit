@@ -40,14 +40,18 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen" >
+  <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content text-center">
       <div class="max-w-lg">
         <h1 class="text-5xl font-bold motion-preset-bounce">Hello there</h1>
         <p class="py-6" data-aos="fade-up" data-aos-delay="500">
-          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from all walks of life. It's a space where bloggers, writers, and storytellers can orbit around diverse topics and express their thoughts freely. Whether you're passionate about technology, lifestyle, art, or personal growth, Thought Orbit provides the perfect launchpad for your ideas.
+          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from
+          all walks of life. It's a space where bloggers, writers, and storytellers can orbit around diverse topics and
+          express their thoughts freely. Whether you're passionate about technology, lifestyle, art, or personal growth,
+          Thought Orbit provides the perfect launchpad for your ideas.
         </p>
-        <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-out" data-aos-delay="1000">Get Started</button>
+        <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-out" data-aos-delay="1000" onclick="signup()">Get
+          Started</button>
       </div>
     </div>
   </div>
@@ -97,6 +101,9 @@
     mirror: false,
     anchorPlacement: 'top-bottom'
   });
+  const signup = () => {
+    window.location.href = 'signup'
+  }
 </script>
 
 </html>
