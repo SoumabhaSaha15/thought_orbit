@@ -1,25 +1,20 @@
 import FileUpload from "express-fileupload";
+import CookieParser from "cookie-parser";
+import Router from "./routes/index.js";
 import { connect } from "mongoose";
 import Express from "express";
 import dotenv from "dotenv";
 import chalk from "chalk";
 import path from "path";
-import CookieParser from "cookie-parser";
-import Router from "./routes/index.js";
 try {
   dotenv.config();
-  connect(process.env.DB_URI as string);
+  await connect(process.env.DB_URI as string);
   Express()
     .use(Express.static(path.join(import.meta.dirname, "./../public")))
     .use(Express.json())
     .use(Express.urlencoded({ extended: true }))
-    .use(FileUpload({
-      limits: {
-        fileSize: 40 * 1024
-      },
-      abortOnLimit: true
-    }))
     .use(CookieParser())
+    .use(FileUpload())
     .use(Router)
     .set("view engine", "ejs")
     .set("views", path.join(import.meta.dirname, "./../views"))
