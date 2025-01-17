@@ -16,8 +16,8 @@
 </head>
 
 <body class="bg-base-300 text-blue-100 min-h-screen mt-0 flex items-center justify-center">
-  <form class="flex flex-col bg-base-100 shadow-lg p-12 align-middle items-center min-w-[50%] max-w-[80%] rounded-xl" method="POST"
-    action="/signup" data-aos="zoom-in" data-aos-duration="500" enctype="multipart/form-data">
+  <form class="flex flex-col bg-base-100 shadow-lg p-12 align-middle items-center min-w-[50%] max-w-[80%] rounded-xl"
+    method="POST" action="/signup" data-aos="zoom-in" data-aos-duration="500" enctype="multipart/form-data">
     <div class="lg:flex lg:gap-4 xl:flex xl:gap-4">
       <div>
         <label for="uploadFile"
@@ -30,19 +30,19 @@
               d="M20.293 19.707a1 1 0 0 0 1.414-1.414l-5-5a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 1.414 1.414L15 16.414V29a1 1 0 0 0 2 0V16.414z"
               data-original="#000000" />
           </svg>
-          Upload file
+          Upload Image
           <input type="file" name="avatar" required id='uploadFile' class="hidden" accept=".png, .jpg, .jpeg" />
           <p class="text-xs font-medium text-gray-400 mt-2">JPG,PNG,JPEG</p>
         </label>
       </div>
       <div class="lg:flex flex-col justify-center">
         <input class="flex items-center h-12 px-4 w-64 bg-base-300 mt-2 rounded focus:outline-none focus:ring-2"
-          type="text" name="name" pattern="^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$" required placeholder="name" />
+          type="text" name="name" pattern="^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$" minlength="4" maxlength="30" required placeholder="name" />
         <input id="emailField"
           class=" bg-base-300 flex items-center h-12 px-4 w-64 mt-2 rounded focus:outline-none focus:ring-2"
-          name="email" type="email" required placeholder="email"/>
+          name="email" type="email" required placeholder="email" />
         <input class=" bg-base-300 flex items-center h-12 px-4 w-64  mt-2 rounded focus:outline-none focus:ring-2"
-          name="password" type="password" placeholder="password" required pattern="^[\x21-\x7E]+$" />
+          id="pwd" name="password" type="password" maxlength="8" minlength="8" placeholder="password" required pattern="^[\x21-\x7E]+$" />
       </div>
     </div>
     <div>
@@ -68,13 +68,14 @@
     mirror: false,
     anchorPlacement: 'top-bottom'
   });
+  document.getElementById('pwd').ondblclick = (event) => {
+    event.target.type = (event.target.type == "text") ? "password" : "text";
+  }
   document.getElementById('uploadFile').oninput = (event) => {
     try {
       if (event.target.files && (event.target.files)[0].size <= (5 * 1024 * 1024)) {
         event.target.parentElement.style.backgroundImage = `url('${URL.createObjectURL(event.target.files[0])}')`;
-      } else {
-        window.alert('file is larger than 5 MB');
-      }
+      } else window.alert('file is larger than 5 MB');
     } catch (error) {
       window.alert('file is larger than 5 MB');
     }
