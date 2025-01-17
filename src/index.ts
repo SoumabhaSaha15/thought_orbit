@@ -12,7 +12,6 @@ try {
   Express()
     .use(Express.static(path.join(import.meta.dirname, "./../public")))
     .use(Express.json())
-    .use(FileUpload())
     .use(Express.urlencoded({ extended: true }))
     .use(CookieParser())
     .use(Router)
