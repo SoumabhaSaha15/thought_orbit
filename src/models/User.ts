@@ -11,7 +11,7 @@ export type UserType = z.infer<typeof User>;
 export const UserSchema = new Schema<UserType>({
   name: {
     type: String,
-    required: true,
+    required: [true, 'name is required.'],
     maxlength: 30,
     minlength: 4,
     validator: {
@@ -21,20 +21,20 @@ export const UserSchema = new Schema<UserType>({
   },
   email: {
     type: String,
-    required: true,
-    unique:true,
+    required: [true, 'email is required.'],
+    unique: true,
     validator: {
       validate: (value: string) => User.pick({ email: true }).safeParse({ email: value }).success,
-      message: (props: { value: string; }) => `${props.value} is not a valid user name.`
+      message: (props: { value: string; }) => `${props.value} is not a valid email.`
     }
   },
   password: {
     type: String,
-    required: true,
-    unique:true,
+    required: [true, 'password is required.'],
+    unique: true,
     valodator: {
       validate: (value: string) => User.pick({ email: true }).safeParse({ email: value }).success,
-      message: (props: { value: string; }) => `${props.value} is not a valid user name.`
+      message: (props: { value: string; }) => `${props.value} is not a valid password.`
     }
   },
   avatar: {

@@ -1,4 +1,3 @@
-import FileUpload from "express-fileupload";
 import CookieParser from "cookie-parser";
 import Router from "./routes/index.js";
 import { connect } from "mongoose";
@@ -21,5 +20,5 @@ try {
       console.log(chalk.blue.bold(`running http://localhost:${process.env.PORT}`));
     });
 } catch (error) {
-  console.log((error as Error).message);
+  console.log(chalk.red.bold((error as Error).message));
 }
