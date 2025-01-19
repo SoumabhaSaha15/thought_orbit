@@ -17,8 +17,8 @@ try {
     .use(express.json())
     .use(express.urlencoded({ extended: true }))
     .use(cookieParser())
-    .use(async (req:express.Request, _:express.Response, next:express.NextFunction) => {
-      req.GFSB = gridFSBucket; //Centralizing geid fs.
+    .use(async (req: express.Request, _: express.Response, next: express.NextFunction) => {
+      req.GFSB = gridFSBucket; //Centralizing GridFSBucket.
       next();
     })
     .use(router)
