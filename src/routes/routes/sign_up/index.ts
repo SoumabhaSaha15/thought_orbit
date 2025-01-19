@@ -1,13 +1,13 @@
-import FileUpload from "express-fileupload";
+import file_upload from "express-fileupload";
 import express from "express";
 import invalidMimeType from "./POST/invalidMimeType.js";
 import invalidCredentials from "./POST/invalidCredentials.js";
 import duplicateCredentialError from "./POST/duplicateCredentialError.js";
 import setCookie from "./POST/setCookie.js";
-import ErrorHandler from './error.js'
-const Router = express.Router();
-Router
-  .use(FileUpload({
+import error_handler from './error.js'
+const router = express.Router();
+router
+  .use(file_upload({
     limits: {
       fileSize: 5 * 1024 * 1024
     },
@@ -16,6 +16,5 @@ Router
   .route('/signup')
   .get(async (_: express.Request, res: express.Response) => res.render('sign_up/index'))
   .post(invalidMimeType, invalidCredentials, duplicateCredentialError, setCookie);
-Router
-  .use(ErrorHandler);
-export default Router;
+router.use(error_handler);
+export default router;

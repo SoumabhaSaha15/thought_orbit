@@ -1,5 +1,5 @@
 import { GridFSBucket } from 'mongodb';
-import cookieParser from "cookie-parser";
+import cookie_parser from "cookie-parser";
 import router from "./routes/index.js";
 import { connect } from "mongoose";
 import express from "express";
@@ -9,16 +9,16 @@ import path from "path";
 try {
   dotenv.config();
   const CONNECTOR = await connect(process.env.DB_URI as string);
-  const db = CONNECTOR.connection.db;
-  const gridFSBucket = db ? new GridFSBucket(db, { bucketName: process.env.GFSB_SRC as string }) : null;
-  if (!gridFSBucket) throw new Error('Failed to init GridFSBucket');
+  const DB = CONNECTOR.connection.db;
+  const GFSB = DB ? new GridFSBucket(DB, { bucketName: process.env.GFSB_SRC as string }) : null;
+  if (!GFSB) throw new Error('Failed to init GridFSBucket');
   const APP = express()
     .use(express.static(path.join(import.meta.dirname, "./../public")))
     .use(express.json())
     .use(express.urlencoded({ extended: true }))
-    .use(cookieParser())
+    .use(cookie_parser())
     .use(async (req: express.Request, _: express.Response, next: express.NextFunction) => {
-      req.GFSB = gridFSBucket; //Centralizing GridFSBucket.
+      req.GFSB = GFSB; //Centralizing GridFSBucket.
       next();
     })
     .use(router)
