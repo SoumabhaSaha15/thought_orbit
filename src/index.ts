@@ -8,7 +8,7 @@ import chalk from "chalk";
 import path from "path";
 try {
   dotenv.config();
-  const CONNECTOR = await connect(process.env.DB_URI as string);
+  const CONNECTOR = await connect(process.env.DB_URI);
   const DB = CONNECTOR.connection.db;
   const GFSB = DB ? new GridFSBucket(DB, { bucketName: process.env.GFSB_SRC as string }) : null;
   if (!GFSB) throw new Error('Failed to init GridFSBucket');
