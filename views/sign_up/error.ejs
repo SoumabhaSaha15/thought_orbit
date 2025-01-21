@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -17,11 +17,11 @@
 
 <body class="grid items-center min-h-screen">
   <div tabindex="-1" aria-hidden="true"
-    class="bg-base-100 flex place-items-center overflow-y-auto fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full"
+    class="bg-base-200 flex place-items-center overflow-y-auto fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full"
     data-aos="zoom-in" data-aos-duration="500">
     <div class="relative p-4 w-full h-full md:h-auto place-items-center">
       <!-- Modal content -->
-      <div class="relative p-4 max-w-[50%] min-w-[30%] text-center bg-base-300 rounded-lg shadow dark:bg-base-300 sm:p-5">
+      <div class="relative p-4 max-w-[50%] min-w-[30%] text-center bg-base-100 rounded-lg shadow sm:p-5">
         <div
           class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900 p-2 flex items-center justify-center mx-auto mb-3.5">
           <svg fill="#ff0000" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@
           </svg>
           <span class="sr-only">Error</span>
         </div>
-        <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+        <p class="mb-4 text-lg font-semibold text-base-content">
           <%=message%>
         </p>
         <button type="button" onclick="goToHome()"
@@ -57,6 +57,7 @@
   </div>
 </body>
 <script src="scripts/aos.js"></script>
+<script src="scripts/theme-toggler.js"></script>
 <script>
   AOS.init({
     offset: 120,

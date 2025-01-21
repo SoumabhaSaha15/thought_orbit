@@ -111,6 +111,7 @@
   </footer>
 </body>
 <script src="scripts/aos.js"></script>
+<script src="scripts/theme-toggler.js"></script>
 <script>
   AOS.init({
     offset: 120,
@@ -122,18 +123,7 @@
     anchorPlacement: 'top-bottom'
   });
   const signup = () => { window.location.href = 'signup'; }
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  });
   
-function toggleTheme() {
-  const html = document.documentElement;
-  const currentTheme = html.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-}
 </script>
 
 </html>

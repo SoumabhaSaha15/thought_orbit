@@ -32,10 +32,10 @@ try {
   });
   //Graceful shutdown.
   process.on("SIGINT", async () => {
-    console.log(chalk.yellow.bold("Gracefully shutting down..."));
+    console.log(chalk.yellow.bold("Server closed. MongoDB disconnected."));
     await CONNECTOR.disconnect();
-    APP.close(() => {
-      console.log(chalk.green.bold("Server closed. MongoDB disconnected."));
+    APP.close(async (error) => {
+      if (error) console.log(chalk.red.bold(error.message || "Error during server shutdown."));
       process.exit(0);
     });
   });
