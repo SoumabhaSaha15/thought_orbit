@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import TWSB from 'tailwind-scrollbar';
 import daisyui from 'daisyui';
 import TWM from 'tailwindcss-motion';
 export default {
@@ -6,6 +7,9 @@ export default {
   content: ["./public/**/*.html", "./views/**/*.ejs"],
   theme: {
     extend: {},
+  },
+  variants: {
+    scrollbar: ['rounded'], // Add variants if needed
   },
   daisyui: {
     themes: [
@@ -31,7 +35,7 @@ export default {
           "warning-content": "#120c00",
           "error": "#ff0060",
           "error-content": "#160003",
-        },dark: {
+        }, dark: {
           "primary": "#00b4ff",
           "primary-content": "#000c16",
           "secondary": "#0064ff",
@@ -56,5 +60,5 @@ export default {
       },
     ],
   },
-  plugins: [daisyui, TWM],
+  plugins: [daisyui, TWM, TWSB],
 }
