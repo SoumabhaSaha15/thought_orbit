@@ -625,6 +625,136 @@ html {
 }
 
 :root {
+  --p: 57.096% 0.297116 304.655184;
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+  --pc: 91.1525% 0.054506 306.681461;
+  --s: 55.0587% 0.248713 261.673311;
+  --sc: 90.7777% 0.044755 258.76263;
+  --a: 54.5938% 0.185769 142.495339;
+  --ac: 90.9164% 0.038076 142.833048;
+  --n: 26.9968% 0.019904 142.013682;
+  --nc: 85.4397% 0.005233 145.529564;
+  --b1: 98.8576% 0.023768 99.094492;
+  --b2: 88.9425% 0.021743 98.144317;
+  --b3: 79.0845% 0.018312 96.160103;
+  --bc: 19.9012% 0.005847 106.919257;
+  --in: 61.0379% 0.111062 219.910022;
+  --inc: 12.4237% 0.022517 219.335424;
+  --su: 87.0213% 0.209853 139.425231;
+  --suc: 17.2197% 0.041846 138.694783;
+  --wa: 79.2724% 0.162233 92.526163;
+  --wac: 15.7856% 0.032265 90.660131;
+  --er: 63.7478% 0.254752 12.298123;
+  --erc: 12.7563% 0.050976 12.702477;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --p: 73% 0.16025 237.355176;
+    --rounded-box: 1rem;
+    --rounded-btn: 0.5rem;
+    --rounded-badge: 1.9rem;
+    --animation-btn: 0.25s;
+    --animation-input: .2s;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+    --pc: 14.6289% 0.032036 237.195524;
+    --s: 55.9726% 0.243081 261.078411;
+    --sc: 91.048% 0.043496 257.970819;
+    --a: 66.4866% 0.138849 233.841183;
+    --ac: 13.1871% 0.027833 234.631186;
+    --n: 26.0195% 0.028662 313.316799;
+    --nc: 85.187% 0.006359 317.751048;
+    --b1: 24.8751% 0.049842 232.364538;
+    --b2: 22.5121% 0.044744 232.353727;
+    --b3: 20.0222% 0.040475 231.240578;
+    --bc: 85.027% 0.009488 232.387659;
+    --in: 78.323% 0.148203 224.854809;
+    --inc: 15.6669% 0.029688 225.014778;
+    --su: 60.3064% 0.123864 166.821749;
+    --suc: 11.9122% 0.024919 165.380761;
+    --wa: 67.8924% 0.192193 45.585713;
+    --wac: 13.6548% 0.037115 48.125975;
+    --er: 62.996% 0.199318 23.075315;
+    --erc: 12.7638% 0.038316 24.350133;
+  }
+}
+
+[data-theme=light] {
+  --p: 57.096% 0.297116 304.655184;
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+  --pc: 91.1525% 0.054506 306.681461;
+  --s: 55.0587% 0.248713 261.673311;
+  --sc: 90.7777% 0.044755 258.76263;
+  --a: 54.5938% 0.185769 142.495339;
+  --ac: 90.9164% 0.038076 142.833048;
+  --n: 26.9968% 0.019904 142.013682;
+  --nc: 85.4397% 0.005233 145.529564;
+  --b1: 98.8576% 0.023768 99.094492;
+  --b2: 88.9425% 0.021743 98.144317;
+  --b3: 79.0845% 0.018312 96.160103;
+  --bc: 19.9012% 0.005847 106.919257;
+  --in: 61.0379% 0.111062 219.910022;
+  --inc: 12.4237% 0.022517 219.335424;
+  --su: 87.0213% 0.209853 139.425231;
+  --suc: 17.2197% 0.041846 138.694783;
+  --wa: 79.2724% 0.162233 92.526163;
+  --wac: 15.7856% 0.032265 90.660131;
+  --er: 63.7478% 0.254752 12.298123;
+  --erc: 12.7563% 0.050976 12.702477;
+}
+
+:root:has(input.theme-controller[value=light]:checked) {
+  --p: 57.096% 0.297116 304.655184;
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+  --pc: 91.1525% 0.054506 306.681461;
+  --s: 55.0587% 0.248713 261.673311;
+  --sc: 90.7777% 0.044755 258.76263;
+  --a: 54.5938% 0.185769 142.495339;
+  --ac: 90.9164% 0.038076 142.833048;
+  --n: 26.9968% 0.019904 142.013682;
+  --nc: 85.4397% 0.005233 145.529564;
+  --b1: 98.8576% 0.023768 99.094492;
+  --b2: 88.9425% 0.021743 98.144317;
+  --b3: 79.0845% 0.018312 96.160103;
+  --bc: 19.9012% 0.005847 106.919257;
+  --in: 61.0379% 0.111062 219.910022;
+  --inc: 12.4237% 0.022517 219.335424;
+  --su: 87.0213% 0.209853 139.425231;
+  --suc: 17.2197% 0.041846 138.694783;
+  --wa: 79.2724% 0.162233 92.526163;
+  --wac: 15.7856% 0.032265 90.660131;
+  --er: 63.7478% 0.254752 12.298123;
+  --erc: 12.7563% 0.050976 12.702477;
+}
+
+[data-theme=dark] {
   --p: 73% 0.16025 237.355176;
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
@@ -654,6 +784,41 @@ html {
   --wac: 13.6548% 0.037115 48.125975;
   --er: 62.996% 0.199318 23.075315;
   --erc: 12.7638% 0.038316 24.350133;
+}
+
+:root:has(input.theme-controller[value=dark]:checked) {
+  --p: 73% 0.16025 237.355176;
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+  --pc: 14.6289% 0.032036 237.195524;
+  --s: 55.9726% 0.243081 261.078411;
+  --sc: 91.048% 0.043496 257.970819;
+  --a: 66.4866% 0.138849 233.841183;
+  --ac: 13.1871% 0.027833 234.631186;
+  --n: 26.0195% 0.028662 313.316799;
+  --nc: 85.187% 0.006359 317.751048;
+  --b1: 24.8751% 0.049842 232.364538;
+  --b2: 22.5121% 0.044744 232.353727;
+  --b3: 20.0222% 0.040475 231.240578;
+  --bc: 85.027% 0.009488 232.387659;
+  --in: 78.323% 0.148203 224.854809;
+  --inc: 15.6669% 0.029688 225.014778;
+  --su: 60.3064% 0.123864 166.821749;
+  --suc: 11.9122% 0.024919 165.380761;
+  --wa: 67.8924% 0.192193 45.585713;
+  --wac: 13.6548% 0.037115 48.125975;
+  --er: 62.996% 0.199318 23.075315;
+  --erc: 12.7638% 0.038316 24.350133;
+}
+
+:root {
   --motion-default-timing: cubic-bezier(.165, .84, .44, 1);
   --motion-bounce: linear(0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141 13.6%, 0.25, 0.391, 0.563, 0.765,1, 0.891 40.9%, 0.848, 0.813, 0.785, 0.766, 0.754, 0.75, 0.754, 0.766, 0.785,0.813, 0.848, 0.891 68.2%, 1 72.7%, 0.973, 0.953, 0.941, 0.938, 0.941, 0.953,0.973, 1, 0.988, 0.984, 0.988, 1);
   --motion-spring-smooth: linear(0, 0.001 0.44%, 0.0045 0.94%, 0.0195 2.03%, 0.0446 3.19%, 0.0811 4.5%, 0.1598 6.82%, 0.3685 12.34%, 0.4693 15.17%, 0.5663, 0.6498 21.27%, 0.7215 24.39%, 0.7532 25.98%, 0.7829 27.65%, 0.8105, 0.8349 31.14%, 0.8573 32.95%, 0.8776 34.84%, 0.8964 36.87%, 0.9136 39.05%, 0.929 41.37%, 0.9421 43.77%, 0.9537 46.38%, 0.9636 49.14%, 0.9789 55.31%, 0.9888 62.35%, 0.9949 71.06%, 0.9982 82.52%, 0.9997 99.94%);
@@ -1149,6 +1314,22 @@ html {
 .btn:is(input[type="radio"]):after {
   --tw-content: attr(aria-label);
   content: var(--tw-content);
+}
+
+.checkbox {
+  flex-shrink: 0;
+  --chkbg: var(--fallback-bc,oklch(var(--bc)/1));
+  --chkfg: var(--fallback-b1,oklch(var(--b1)/1));
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: var(--rounded-btn, 0.5rem);
+  border-width: 1px;
+  border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
+  --tw-border-opacity: 0.2;
 }
 
 .dropdown {
@@ -1692,6 +1873,54 @@ html {
   }
 }
 
+.checkbox:focus {
+  box-shadow: none;
+}
+
+.checkbox:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--fallback-bc,oklch(var(--bc)/1));
+}
+
+.checkbox:disabled {
+  border-width: 0px;
+  cursor: not-allowed;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+  opacity: 0.2;
+}
+
+.checkbox:checked,
+  .checkbox[aria-checked="true"] {
+  background-repeat: no-repeat;
+  animation: checkmark var(--animation-input, 0.2s) ease-out;
+  background-color: var(--chkbg);
+  background-image: linear-gradient(-45deg, transparent 65%, var(--chkbg) 65.99%),
+      linear-gradient(45deg, transparent 75%, var(--chkbg) 75.99%),
+      linear-gradient(-45deg, var(--chkbg) 40%, transparent 40.99%),
+      linear-gradient(
+        45deg,
+        var(--chkbg) 30%,
+        var(--chkfg) 30.99%,
+        var(--chkfg) 40%,
+        transparent 40.99%
+      ),
+      linear-gradient(-45deg, var(--chkfg) 50%, var(--chkbg) 50.99%);
+}
+
+.checkbox:indeterminate {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+  background-repeat: no-repeat;
+  animation: checkmark var(--animation-input, 0.2s) ease-out;
+  background-image: linear-gradient(90deg, transparent 80%, var(--chkbg) 80%),
+      linear-gradient(-90deg, transparent 80%, var(--chkbg) 80%),
+      linear-gradient(0deg, var(--chkbg) 43%, var(--chkfg) 43%, var(--chkfg) 57%, var(--chkbg) 57%);
+}
+
 @keyframes checkmark {
   0% {
     background-position-y: 5px;
@@ -1980,6 +2209,49 @@ html {
   }
 }
 
+.swap-rotate .swap-on,
+.swap-rotate .swap-indeterminate,
+.swap-rotate input:indeterminate ~ .swap-on {
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swap-rotate input:checked ~ .swap-off,
+.swap-active:where(.swap-rotate) .swap-off,
+.swap-rotate input:indeterminate ~ .swap-off {
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swap-rotate input:checked ~ .swap-on,
+.swap-active:where(.swap-rotate) .swap-on,
+.swap-rotate input:indeterminate ~ .swap-indeterminate {
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.swap-flip .swap-on,
+.swap-flip .swap-indeterminate,
+.swap-flip input:indeterminate ~ .swap-on {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.swap-flip input:checked ~ .swap-off,
+.swap-active:where(.swap-flip) .swap-off,
+.swap-flip input:indeterminate ~ .swap-off {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.swap-flip input:checked ~ .swap-on,
+.swap-active:where(.swap-flip) .swap-on,
+.swap-flip input:indeterminate ~ .swap-indeterminate {
+  transform: rotateY(0deg);
+}
+
 @keyframes toast-pop {
   0% {
     transform: scale(0.9);
@@ -2247,6 +2519,10 @@ html {
   aspect-ratio: 1 / 1;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -2269,6 +2545,10 @@ html {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-11 {
@@ -2413,11 +2693,6 @@ html {
 .bg-red-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-contain {
@@ -2676,9 +2951,9 @@ input:user-invalid {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dark\:bg-gray-800 {
+  .dark\:bg-base-300 {
     --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+    background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity, 1)));
   }
 
   .dark\:bg-green-900 {
