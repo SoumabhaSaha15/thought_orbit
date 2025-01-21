@@ -10,7 +10,7 @@ try {
   dotenv.config();
   const CONNECTOR = await connect(process.env.DB_URI);
   const DB = CONNECTOR.connection.db;
-  const GFSB = DB ? new GridFSBucket(DB, { bucketName: process.env.GFSB_SRC as string }) : null;
+  const GFSB = DB ? new GridFSBucket(DB, { bucketName: process.env.GFSB_SRC }) : null;
   if (!GFSB) throw new Error('Failed to init GridFSBucket');
   const APP = express()
     .use(express.static(path.join(import.meta.dirname, "./../public")))
