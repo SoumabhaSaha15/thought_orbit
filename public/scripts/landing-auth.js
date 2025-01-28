@@ -36,9 +36,24 @@
       duration: 400,
       easing: 'ease',
       once: false,
-      mirror: false,
+      mirror: true,
       anchorPlacement: 'top-bottom'
     });
   }
   onload = onhashchange;
+
+  document.getElementById('password').ondblclick = (event) => {
+    event.target.type = (event.target.type == "text") ? "password" : "text";
+  }
+
+  document.getElementById('avatar').oninput = (event) => {
+    try {
+      if (event.target.files && (event.target.files)[0].size <= (5 * 1024 * 1024)) {
+        document.querySelector('img#avatar-preview').src = URL.createObjectURL(event.target.files[0]);
+      } else window.alert('file is larger than 5 MB');
+    } catch (error) {
+      window.alert('file is larger than 5 MB');
+    }
+  }
+
 })();

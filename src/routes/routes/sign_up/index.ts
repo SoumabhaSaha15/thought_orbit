@@ -14,7 +14,7 @@ router
     abortOnLimit: true
   }))
   .route('/signup')
-  .get(async (_: express.Request, res: express.Response) => res.render('sign_up/index'))
+  .get(async (_: express.Request, res: express.Response) => res.redirect('/#user-signup'))
   .post(invalidMimeType, invalidCredentials, duplicateCredentialError, setCookie);
 router.use(error_handler);
 export default router;
