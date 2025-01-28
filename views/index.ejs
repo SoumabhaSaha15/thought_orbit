@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen text-base-content">
+  <div class="hero bg-base-200 min-h-screen text-base-content" id="hero">
     <div class="hero-content text-center">
       <div class="max-w-lg">
         <h1 class="text-5xl font-bold motion-preset-bounce">Hello there</h1>
@@ -77,7 +77,7 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen" id="user-login" data-aos="fade-down" data-aos-delay="10">
+  <div class="hidden bg-base-200 min-h-screen" id="user-login">
     <div class="hero-content flex-col md:flex-col lg:flex-row">
       <div class="text-center text-base-content lg:text-left">
         <h1 class="text-5xl font-bold">Login now!</h1>
@@ -85,39 +85,8 @@
           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
           quasi. In deleniti eaque aut repudiandae et a id nisi.
         </p>
-      </div>
-      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
-            </label>
-            <input type="email" placeholder="email" class="input input-bordered" required />
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
-            </label>
-            <input type="password" placeholder="password" class="input input-bordered" required />
-            <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-            </label>
-          </div>
-          <div class="form-control mt-6">
-            <button class="btn btn-primary">Login</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero bg-base-200 min-h-screen" id="user-signup" data-aos="fade-down" data-aos-delay="10">
-    <div class="hero-content flex-col md:flex-col lg:flex-row-reverse">
-      <div class="text-center text-base-content lg:text-left">
-        <h1 class="text-5xl font-bold">Signup now!</h1>
-        <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        <p class="py-8 font-light">Don't have an account
+          <a href="#user-signup" class="btn btn-primary label-text-alt link link-hover">signup</a>
         </p>
       </div>
       <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -145,7 +114,44 @@
     </div>
   </div>
 
-  <footer class="footer bg-base-300 text-base-content p-10" data-aos="fade-up" data-aos-delay="10">
+  <div class="hidden bg-base-200 min-h-screen" id="user-signup">
+    <div class="hero-content flex-col md:flex-col lg:flex-row-reverse">
+      <div class="text-center text-base-content lg:text-left">
+        <h1 class="text-5xl font-bold">Signup now!</h1>
+        <p class="py-6">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+        <p class="py-8 font-light">Already have an account
+          <a href="#user-login" class="btn btn-primary label-text-alt link link-hover">login</a>
+        </p>
+      </div>
+      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <form class="card-body">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input type="email" placeholder="email" class="input input-bordered" required />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="password" placeholder="password" class="input input-bordered" required />
+            <label class="label">
+              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+            </label>
+          </div>
+          <div class="form-control mt-6">
+            <button class="btn btn-primary">Signup</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer bg-base-300 text-base-content p-10" id="footer" data-aos="fade-up" data-aos-delay="10">
     <aside>
       <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
         clip-rule="evenodd" class="fill-current" style="border-radius: 10px;">
@@ -181,18 +187,9 @@
 </body>
 <script src="scripts/aos.js"></script>
 <script src="scripts/theme-toggler.js"></script>
+<script src="scripts/landing-auth.js"></script>
 <script>
-  AOS.init({
-    offset: 120,
-    delay: 0,
-    duration: 400,
-    easing: 'ease',
-    once: true,
-    mirror: false,
-    anchorPlacement: 'top-bottom'
-  });
-  const signup = () => { window.location.href = 'signup'; }
-
+  const signup = () => { window.location.href = './#user-login'; }
 </script>
 
 </html>
