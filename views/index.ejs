@@ -42,7 +42,7 @@
         <label class="swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
 
-          <input type="checkbox" class="theme-controller" value="synthwave" onclick="toggleTheme()" />
+          <input type="checkbox" class="hidden theme-controller" value="synthwave" onclick="toggleTheme()" />
 
           <!-- sun icon -->
           <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@
           Thought Orbit provides the perfect launchpad for your ideas.
         </p>
         <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-in" data-aos-delay="1000"
-          onclick="signup()">Get
+          onclick="SIGN_UP()">Get
           Started</button>
       </div>
     </div>
@@ -92,13 +92,13 @@
             <label class="label">
               <span class="label-text">Email</span>
             </label>
-            <input type="email" placeholder="email" class="input input-bordered" required />
+            <input type="email" autocomplete="email" placeholder="email" class="input input-bordered" required />
           </div>
           <div class="form-control">
             <label class="label">
               <span class="label-text">Password</span>
             </label>
-            <input type="password" placeholder="password" class="input input-bordered" required />
+            <input type="password" autocomplete="current-password" placeholder="password" class="input input-bordered" required />
             <label class="label">
               <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
             </label>
@@ -125,7 +125,7 @@
         </p>
       </div>
       <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body" method="POST" action="/signup" enctype="multipart/form-data">
+        <form class="card-body" method="POST" action="/signup" enctype="multipart/form-data" name="signup">
           
           <div class="avatar justify-center">
             <label class="w-24" for="avatar">
@@ -138,21 +138,21 @@
             <label class="label">
               <span class="label-text">Name</span>
             </label>
-            <input type="name" name="name" pattern="^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$" minlength="4" maxlength="30" placeholder="name" class="input input-bordered" required />
+            <input type="name" name="name" pattern="^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$" minlength="4" maxlength="30" placeholder="name" class="input input-bordered" autocomplete="username" required />
           </div>
 
           <div class="form-control">
             <label class="label">
               <span class="label-text">Email</span>
             </label>
-            <input type="email" name="email" placeholder="email" class="input input-bordered" required />
+            <input type="email" name="email" placeholder="email" class="input input-bordered" autocomplete="email" required />
           </div>
 
           <div class="form-control">
             <label class="label">
               <span class="label-text">Password</span>
             </label>
-            <input type="password" name="password" id="password" name="password" type="password" maxlength="8" minlength="8" placeholder="password (double click to show)" pattern="^[\x21-\x7E]+$"  class="input input-bordered" required />
+            <input type="password" name="password" id="password" name="password" type="password" maxlength="8" minlength="8" placeholder="password (double click to show)" pattern="^[\x21-\x7E]+$"  class="input input-bordered" autocomplete="current-password" required />
             <label class="label">
               <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
             </label>
@@ -205,9 +205,9 @@
 </body>
 <script src="scripts/aos.js"></script>
 <script src="scripts/theme-toggler.js"></script>
-<script src="scripts/landing-auth.js"></script>
+<script src="scripts/landing-auth.js" type="module"></script>
 <script>
-  const signup = () => { window.location.href = './#user-login'; }
+  const SIGN_UP = () => { window.location.href = './#user-login'; }
 </script>
 
 </html>

@@ -28,7 +28,6 @@
     }
   };
   window.onhashchange = () => {
-    console.log(location.hash);
     hashChange[location.hash] ? hashChange[location.hash]() : load_hero();
     AOS.init({
       offset: 120,
@@ -55,5 +54,4 @@
       window.alert('file is larger than 5 MB');
     }
   }
-
 })();

@@ -1,7 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 import TWSB from 'tailwind-scrollbar';
 import daisyui from 'daisyui';
 import TWM from 'tailwindcss-motion';
+import plugins from 'flowbite/plugin';
+//@ts-ignore
+import ft from 'flowbite-typography';
+//@ts-check
+/** @type {import('tailwindcss').Config} */
 export default {
   mode: "jit",
   content: ["./public/**/*.html", "./views/**/*.ejs"],
@@ -60,5 +64,5 @@ export default {
       },
     ],
   },
-  plugins: [daisyui, TWM, TWSB],
+  plugins: [plugins,daisyui, TWM, TWSB,ft],
 }
