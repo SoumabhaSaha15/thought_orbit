@@ -1,2 +1,2 @@
-import { initFlowbite } from 'flowbite'
+import initFlowbite from './flowbite/initFlowbite.js'
 initFlowbite();

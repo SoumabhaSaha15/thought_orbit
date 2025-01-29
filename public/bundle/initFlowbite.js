@@ -1,6 +1,7 @@
 import {
-  initFlowbite
-} from "./chunk-RJSM3H6D.js";
+  initFlowbite_default
+} from "./chunk-LACOHR3S.js";
+import "./chunk-RJSM3H6D.js";
 
-// public/imports/initfb.js
-initFlowbite();
+// public/imports/initFlowbite.js
+initFlowbite_default();

@@ -4,7 +4,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const esbuildConfig = {
-  entryPoints: [path.resolve("public/imports/*.js")], // Include all JS files
+  entryPoints: [path.resolve("public/imports/**/*.js")], // Include all JS files
   outdir: "public/bundle", // Output directory for code-split files
   bundle: true, // Enable bundling
   minify: false, // Minify files

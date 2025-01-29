@@ -1,6 +1,16 @@
-import rte from './../bundle/import-rte.js';
-const { Editor, StarterKit, Highlight, Underline, Link, TextStyle,TextAlign, Image, YouTube, Color, FontFamily, Bold } = rte;
-// initFlowbite();
+import Editor from './../bundle/tiptap/core/editor.js';
+import StarterKit from './../bundle/tiptap/starter-kit.js';
+import Highlight from './../bundle/tiptap/extension/highlight.js';
+import Underline from './../bundle/tiptap/extension/highlight.js';
+import Link from './../bundle/tiptap/extension/link.js';
+import TextStyle from './../bundle/tiptap/extension/text-style.js';
+import TextAlign from './../bundle/tiptap/extension/text-align.js';
+import Image from './../bundle/tiptap/extension/image.js';
+import YouTube from './../bundle/tiptap/extension/youtube.js';
+import Color from './../bundle/tiptap/extension/color.js';
+import FontFamily from './../bundle/tiptap/extension/font-family.js';
+import Bold from './../bundle/tiptap/extension/bold.js';
+
 window.addEventListener('load', function () {
   if (document.getElementById("wysiwyg-example")) {
     const FontSizeTextStyle = TextStyle.extend({
