@@ -1,3 +1,4 @@
+import AOS from './../bundle/aos.js';
 (() => {
   const user_login = document.getElementById('user-login');
   const user_signup = document.getElementById('user-signup');
