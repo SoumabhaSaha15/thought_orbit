@@ -1,11 +1,13 @@
-import { GridFSBucket } from 'mongodb';
 import cookie_parser from "cookie-parser";
+import layout from "express-ejs-layouts";
+import { GridFSBucket } from "mongodb";
 import router from "./routes/index.js";
 import { connect } from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
 import chalk from "chalk";
 import path from "path";
+
 try {
   dotenv.config();
   const CONNECTOR = await connect(process.env.DB_URI);
@@ -13,6 +15,8 @@ try {
   const GFSB = DB ? new GridFSBucket(DB, { bucketName: process.env.GFSB_SRC }) : null;
   if (!GFSB) throw new Error('Failed to init GridFSBucket');
   const APP = express()
+    .set("view engine", "ejs")
+    .set("views", path.join(import.meta.dirname, "./../views"))
     .use(express.static(path.join(import.meta.dirname, "./../public")))
     .use(express.json())
     .use(express.urlencoded({ extended: true }))
@@ -21,9 +25,8 @@ try {
       req.GFSB = GFSB; //Centralizing GridFSBucket.
       next();
     })
+    .use(layout)
     .use(router)
-    .set("view engine", "ejs")
-    .set("views", path.join(import.meta.dirname, "./../views"))
     .listen(process.env.PORT, () => {
       console.log(chalk.blue.bold(`running http://localhost:${process.env.PORT}`));
     });

@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from "bcrypt";
 import { z } from "zod";
 export const User = z.strictObject({
   name: z.string({ required_error: 'name is required' }).min(4, 'name must have 4 or more chars').max(30, 'name must be under 30 chars').regex(/^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/, 'invalid user name'),

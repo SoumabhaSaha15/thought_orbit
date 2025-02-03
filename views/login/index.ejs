@@ -1,0 +1,42 @@
+<body>
+  <%- include('./../components/default-navbar.ejs') %>
+    <div class="grid place-items-center bg-base-200 min-h-screen text-base-content">
+      <div class="hero-content flex-col md:flex-col lg:flex-row">
+        <div class="text-center text-base-content lg:text-left">
+          <h1 class="text-5xl font-bold">Login now!</h1>
+          <p class="py-6">
+            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers
+            from
+            all walks of life.
+          </p>
+        </div>
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <form class="card-body">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Email</span>
+              </label>
+              <input type="email" autocomplete="email" placeholder="email" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Password</span>
+              </label>
+              <input type="password" autocomplete="current-password" placeholder="password" class="input input-bordered"
+                required />
+              <label class="label">
+                <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+              </label>
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-primary">Login</button>
+            </div>
+            <p class="py-8 font-medium">Don't have an account
+              <a href="./signup" class="label-text-alt link link-hover">signup</a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+</body>

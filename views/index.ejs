@@ -1,206 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/styles/tailwind.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles/aos.css" />
-  <link rel="icon" type="image/webp" href="assets/logo.webp" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <title>Thought Orbit.IO</title>
-</head>
-
-<body class="bg-gray-100 text-blue-100">
-  <div class="navbar bg-base-100">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle text-base-content">
-          <ion-icon src="assets/menu.svg" class="text-base-content" size="large"></ion-icon>
+<body>
+  <%- include('./components/default-navbar.ejs') %>
+    <div class="hero bg-base-200 min-h-screen text-base-content" id="hero">
+      <div class="hero-content text-center">
+        <div class="max-w-lg">
+          <h1 class="text-5xl font-bold motion-preset-bounce">Hello there</h1>
+          <p class="py-6" data-aos="fade-up" data-aos-delay="500">
+            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers
+            from
+            all walks of life. It's a space where bloggers, writers, and storytellers can orbit around diverse topics
+            and
+            express their thoughts freely. Whether you're passionate about technology, lifestyle, art, or personal
+            growth,
+            Thought Orbit provides the perfect launchpad for your ideas.
+          </p>
+          <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-in" data-aos-delay="1000"
+            onclick="SIGN_UP()">Get
+            Started</button>
         </div>
-        <ul tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base-content">
-          <li><a>Home</a></li>
-          <li><a>About</a></li>
-          <li><a>Terms & Condition</a></li>
-          <li><a>Contacts</a></li>
-        </ul>
       </div>
     </div>
-    <div class="navbar-center">
-      <a class="btn btn-ghost text-xl text-base-content hover:animate-pulse">Thought Orbit</a>
-    </div>
-    <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle text-base-content">
-        <label class="swap swap-rotate">
-          <!-- this hidden checkbox controls the state -->
-          <input type="checkbox" class="hidden theme-controller" value="synthwave" onclick="toggleTheme()" />
-          <ion-icon src="assets/sun.svg" class="swap-off text-base-content" size="large" style="scale:1"></ion-icon>
-          <ion-icon src="assets/moon.svg" class="swap-on text-base-content" size="large" style="scale:1"></ion-icon>
-        </label>
-      </button>
-    </div>
-  </div>
-
-  <div class="hero bg-base-200 min-h-screen text-base-content" id="hero">
-    <div class="hero-content text-center">
-      <div class="max-w-lg">
-        <h1 class="text-5xl font-bold motion-preset-bounce">Hello there</h1>
-        <p class="py-6" data-aos="fade-up" data-aos-delay="500">
-          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from
-          all walks of life. It's a space where bloggers, writers, and storytellers can orbit around diverse topics and
-          express their thoughts freely. Whether you're passionate about technology, lifestyle, art, or personal growth,
-          Thought Orbit provides the perfect launchpad for your ideas.
-        </p>
-        <button class="btn btn-primary hover:animate-pulse" data-aos="zoom-in" data-aos-delay="1000"
-          onclick="SIGN_UP()">Get
-          Started</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="hidden bg-base-200 min-h-screen text-base-content" id="user-login">
-    <div class="hero-content flex-col md:flex-col lg:flex-row">
-      <div class="text-center text-base-content lg:text-left">
-        <h1 class="text-5xl font-bold">Login now!</h1>
-        <p class="py-6">
-          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from
-          all walks of life.
-        </p>
-      </div>
-      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
-            </label>
-            <input type="email" autocomplete="email" placeholder="email" class="input input-bordered" required />
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
-            </label>
-            <input type="password" autocomplete="current-password" placeholder="password" class="input input-bordered"
-              required />
-            <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-            </label>
-          </div>
-          <div class="form-control mt-6">
-            <button class="btn btn-primary">Login</button>
-          </div>
-          <p class="py-8 font-medium">Don't have an account
-            <a href="#user-signup" class="label-text-alt link link-hover">signup</a>
-          </p>
-        </form>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="hidden bg-base-200 min-h-screen text-base-content" id="user-signup">
-    <div class="hero-content flex-col md:flex-col lg:flex-row-reverse">
-      <div class="text-center text-base-content lg:text-left">
-        <h1 class="text-5xl font-bold">Signup now!</h1>
-        <p class="py-6">
-          Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from
-          all walks of life.
-        </p>
-      </div>
-      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body" method="POST" action="/signup" enctype="multipart/form-data" name="signup">
-
-          <div class="avatar justify-center">
-            <label class="w-24" for="avatar">
-              <img src="assets/upload.svg" class="rounded-full aspect-square border-dashed border-2 bg-base-200"
-                id="avatar-preview" />
-            </label>
-            <input name="avatar" id="avatar" type="file" class="hidden" accept=".jpg ,.jpeg ,.png" required />
-          </div>
-
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Name</span>
-            </label>
-            <input type="name" name="name" pattern="^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$" minlength="4" maxlength="30"
-              placeholder="name" class="input input-bordered" autocomplete="username" required />
-          </div>
-
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
-            </label>
-            <input type="email" name="email" placeholder="email" class="input input-bordered" autocomplete="email"
-              required />
-          </div>
-
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
-            </label>
-            <input type="password" name="password" id="password" name="password" type="password" maxlength="8"
-              minlength="8" placeholder="password (double click to show)" pattern="^[\x21-\x7E]+$"
-              class="input input-bordered" autocomplete="current-password" required />
-            <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-            </label>
-          </div>
-
-          <div class="form-control mt-6">
-            <button class="btn btn-primary">Signup</button>
-          </div>
-          <p class="py-8 font-medium">Already have an account
-            <a href="#user-login" class="label-text-alt link link-hover">login</a>
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer bg-base-300 text-base-content p-10" id="footer" data-aos="fade-up" data-aos-delay="10">
-    <aside>
-      <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-        clip-rule="evenodd" class="fill-current" style="border-radius: 10px;">
-        <image href="assets/logo.webp" width="50" height="50" />
-      </svg>
-      <p>
-        Thought orbit.IO
-        <br />
-        Share Your Thoughts and Spark Meaningful Connections.
-      </p>
-    </aside>
-    <nav>
-      <h6 class="footer-title">Services</h6>
-      <a class="link link-hover">Branding</a>
-      <a class="link link-hover">Design</a>
-      <a class="link link-hover">Marketing</a>
-      <a class="link link-hover">Advertisement</a>
-    </nav>
-    <nav>
-      <h6 class="footer-title">Company</h6>
-      <a class="link link-hover">About us</a>
-      <a class="link link-hover">Contact</a>
-      <a class="link link-hover">Jobs</a>
-      <a class="link link-hover">Press kit</a>
-    </nav>
-    <nav>
-      <h6 class="footer-title">Legal</h6>
-      <a class="link link-hover">Terms of use</a>
-      <a class="link link-hover">Privacy policy</a>
-      <a class="link link-hover">Cookie policy</a>
-    </nav>
-  </footer>
+    <%- include('./components/default-footer.ejs') %>
 </body>
-<script src="scripts/theme-toggler.js"></script>
-<script src="scripts/landing-auth.js" type="module"></script>
 <script>
-  const SIGN_UP = () => { window.location.href = './#user-login'; }
+  const SIGN_UP = () => {
+    location.href = './signup';
+  };
 </script>
-
-</html>

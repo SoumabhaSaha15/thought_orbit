@@ -1,2 +1,2 @@
-import initFlowbite from './../bundle/flowbite/initFlowbite.js';
+import initFlowbite from "./../bundle/flowbite/initFlowbite.js";
 initFlowbite();

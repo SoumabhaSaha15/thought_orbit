@@ -1,4 +1,4 @@
-import { GridFSBucket } from 'mongodb';
+import { GridFSBucket } from "mongodb";
 declare global {
   namespace Express {
     interface Request {
