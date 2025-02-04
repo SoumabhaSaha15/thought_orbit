@@ -1,7 +1,6 @@
-import { Schema, model, Error } from "mongoose";
+import { Schema, model } from "mongoose";
 import * as bcrypt from "bcrypt";
 import { z } from "zod";
-import path from 'path';
 export const User = z.strictObject({
   name: z.string({ required_error: 'name is required' }).min(4, 'name must have 4 or more chars').max(30, 'name must be under 30 chars').regex(/^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/, 'invalid user name'),
   email: z.string({ required_error: 'email is required' }).email('invalid email'),
@@ -42,13 +41,26 @@ export const UserSchema = new Schema<UserType>({
     type: Buffer,
     required: [true, 'profile pic is required.']
   }
-});
+}, { timestamps: true });
 
 UserSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, await bcrypt.genSalt(12));
   next();
 });
 
+UserSchema.pre('insertMany', async function (next, docs) {
+  try {
+    const documents = Array.isArray(docs) ? docs : [docs];
+    await Promise.all(documents.map(async (doc) => {
+      if (doc.password) doc.password = await bcrypt.hash(doc.password, await bcrypt.genSalt(12));
+      return doc;
+    }));
+    next();
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+});
 
 UserSchema.pre(['updateOne', 'updateMany', 'findOneAndUpdate'], async function (this: any, next) {
   const update = this.getUpdate();
