@@ -8,7 +8,7 @@ export default async (req: express.Request, res: express.Response, next: express
       httpOnly:true,
       expires:TenYearsFromNow
     });
-    res.render('sign_up/success',{message:"Signup successfull."})
+    res.render('signup/success',{message:"Signup successfull."})
   } catch (err) {
     next(new Error((err as Error).message));
   }

@@ -6,6 +6,6 @@ export default async (req: express.Request, res: express.Response, next: express
     req.body = { "id": _id };
     next();
   } catch (err) {
-    next(new Error((err as Error).message));
+    next(err);
   }
 }
