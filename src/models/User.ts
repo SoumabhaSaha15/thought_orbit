@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { CallbackError, Schema, model } from "mongoose";
 import * as bcrypt from "bcrypt";
 import { z } from "zod";
 export const User = z.strictObject({
@@ -53,12 +53,10 @@ UserSchema.pre('insertMany', async function (next, docs) {
     const documents = Array.isArray(docs) ? docs : [docs];
     await Promise.all(documents.map(async (doc) => {
       if (doc.password) doc.password = await bcrypt.hash(doc.password, await bcrypt.genSalt(12));
-      return doc;
     }));
     next();
   } catch (err) {
-    console.log(err);
-    throw err;
+    next(err as CallbackError);
   }
 });
 
