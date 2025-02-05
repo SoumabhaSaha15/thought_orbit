@@ -3,3 +3,4 @@ dist
 .env
 public/bundle/*
 public/styles/tailwind.css
+public/uploads
