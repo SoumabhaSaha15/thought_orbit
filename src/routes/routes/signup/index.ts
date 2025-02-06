@@ -1,9 +1,9 @@
 import duplicateCredentialError from "./POST/duplicateCredentialError.js";
-import invalidCredentials from "./POST/invalidCredentials.js";
+import invalidCredentials from "./POST/invalidCredentials.js"
 import setCookie from "./POST/setCookie.js";
-import error_handler from "./error.js";
+import error_handler from "./../signup/error.js";
+import upload from "./../../../middleware/multer.js";
 import express from "express";
-import upload from "../../../middleware/multer.js";
 const router = express.Router();
 router
   .use(upload.single('avatar'))

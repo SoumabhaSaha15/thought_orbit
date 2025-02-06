@@ -1,5 +1,5 @@
-import express from 'express';
-import jwt from 'jsonwebtoken';
+import express from "express";
+import jwt from "jsonwebtoken";
 export default async (req: express.Request, res: express.Response, next: express.NextFunction) => {
   try {
     const TenYearsFromNow = new Date();
