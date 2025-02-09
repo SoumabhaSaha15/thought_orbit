@@ -33,7 +33,7 @@ export const UserSchema = new Schema<UserType>({
     required: [true, 'password is required.'],
     unique: true,
     valodator: {
-      validate: (value: string) => User.pick({ email: true }).safeParse({ email: value }).success,
+      validate: (value: string) => User.pick({ password: true }).safeParse({ password: value }).success,
       message: (props: { value: string; }) => `${props.value} is not a valid password.`
     }
   },
@@ -41,7 +41,17 @@ export const UserSchema = new Schema<UserType>({
     type: Buffer,
     required: [true, 'profile pic is required.']
   }
-}, { timestamps: true });
+}, {
+  timestamps: true,
+  toJSON: {
+    versionKey: false, // Remove __v field
+    transform: (_, ret) => {
+      delete ret.password;
+      ret.avatar = `http://localhost:${process.env.PORT}/user-avatar/${ret._id}.jpg`
+      return ret;
+    },
+  },
+});
 
 UserSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, await bcrypt.genSalt(12));

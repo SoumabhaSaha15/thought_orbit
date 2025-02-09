@@ -2,6 +2,7 @@ import userImage from "./routes/images/index.js";
 import signup from "./routes/signup/index.js";
 import login from "./routes/login/index.js";
 import test from "./routes/test/index.js";
+import user from "./routes/user/index.js"
 import express from "express";
 const router = express.Router();
 router
@@ -11,5 +12,6 @@ router
   .use(signup)
   .use(login)
   .use(test)
-  .use(userImage);
+  .use(userImage)
+  .use(user);
 export default router;
