@@ -5,7 +5,8 @@
         <div class="text-center text-base-content lg:text-left">
           <h1 class="text-5xl font-bold">Signup now!</h1>
           <p class="py-6">
-            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers from all walks of life.
+            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers
+            from all walks of life.
           </p>
         </div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -17,9 +18,12 @@
                   <img src="assets/upload.svg" class="rounded-full aspect-square border-dashed border-2 bg-base-200"
                     id="avatar-preview" />
                 </label>
-                <input name="avatar" id="avatar" type="file" class="hidden" accept=".jpg ,.jpeg ,.png" required />
               </div>
+              <input name="avatar" id="avatar" type="file"
+                class="file-input file-input-accent file-input-bordered bg-white w-full max-w-xs"
+                accept=".jpg ,.jpeg ,.png" required />
             </div>
+
 
             <div class="form-control">
               <label class="label">
@@ -42,10 +46,11 @@
                 <span class="label-text">Password</span>
               </label>
               <input type="password" name="password" id="password" name="password" type="password" maxlength="8"
-                minlength="8" placeholder="password (double click to show)" pattern="^[\x21-\x7E]+$"
+                minlength="8" placeholder="password" pattern="^[\x21-\x7E]+$"
                 class="input input-bordered" autocomplete="current-password" required />
-              <label class="label">
-                <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+              <label class="label cursor-pointer">
+                <span class="label-text">Show Password</span>
+                <input type="checkbox" id="show-password" class="checkbox text-accent-content" />
               </label>
             </div>
 
@@ -61,8 +66,10 @@
     </div>
 </body>
 <script>
-  document.getElementById('password').ondblclick = (event) => {
-    event.target.type = (event.target.type == "text") ? "password" : "text";
+
+  document.getElementById('show-password').onclick = () => {
+    const password = document.getElementById('password');
+    password.type = (password.type == "text") ? "password" : "text";
   }
 
   document.getElementById('avatar').oninput = (event) => {
@@ -74,4 +81,5 @@
       window.alert('file is larger than 5 MB');
     }
   }
+
 </script>
