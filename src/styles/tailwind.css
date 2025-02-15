@@ -16,26 +16,3 @@ ion-icon[src] {
 input:user-invalid {
   color: red;
 }
-
-@layer utilities {
-  .custom-scrollbar {
-    @apply overflow-y-auto;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    @apply accent-current;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 rounded-3xl;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-current;
-  }
-}

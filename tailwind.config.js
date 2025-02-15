@@ -1,7 +1,7 @@
 import TWSB from 'tailwind-scrollbar';
 import daisyui from 'daisyui';
 import TWM from 'tailwindcss-motion';
-import plugins from 'flowbite/plugin';
+// import plugins from 'flowbite/plugin';
 //@ts-ignore
 import ft from 'flowbite-typography';
 //@ts-check
@@ -64,5 +64,5 @@ export default {
       },
     ],
   },
-  plugins: [plugins,daisyui, TWM, TWSB,ft],
+  plugins: [daisyui, TWM, TWSB,ft],
 }
