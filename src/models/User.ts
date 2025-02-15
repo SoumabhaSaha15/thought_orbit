@@ -1,6 +1,6 @@
 import { CallbackError, Schema, model } from "mongoose";
 import * as bcrypt from "bcrypt";
-import { z } from "zod";
+import { string, z } from "zod";
 export const User = z.strictObject({
   name: z.string({ required_error: 'name is required' }).min(4, 'name must have 4 or more chars').max(30, 'name must be under 30 chars').regex(/^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/, 'invalid user name'),
   email: z.string({ required_error: 'email is required' }).email('invalid email'),
@@ -8,6 +8,11 @@ export const User = z.strictObject({
   avatar: z.instanceof(Buffer)
 });
 export type UserType = z.infer<typeof User>;
+type UserDoc = {
+  name: string,
+  email: string,
+  avatar: string
+};
 export const UserSchema = new Schema<UserType>({
   name: {
     type: String,
@@ -45,10 +50,10 @@ export const UserSchema = new Schema<UserType>({
   timestamps: true,
   toJSON: {
     versionKey: false, // Remove __v field
-    transform: (_, ret) => {
+    transform: (_, ret): UserDoc => {
       delete ret.password;
       ret.avatar = `http://localhost:${process.env.PORT}/user-avatar/${ret._id}.jpg`
-      return ret;
+      return { email: ret.email, name: ret.name, avatar: ret.avatar };
     },
   },
 });
