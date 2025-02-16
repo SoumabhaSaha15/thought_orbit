@@ -2,6 +2,7 @@ import cookie_parser from "cookie-parser";
 import layout from "express-ejs-layouts";
 import { GridFSBucket } from "mongodb";
 import router from "./routes/index.js";
+import { print } from "running-at";
 import { connect } from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
@@ -27,9 +28,8 @@ try {
     })
     .use(layout)
     .use(router)
-    .listen(process.env.PORT, () => {
-      console.log(chalk.blue.bold(`running http://localhost:${process.env.PORT}`));
-    });
+    .listen(process.env.PORT, () => print(process.env.PORT));
+    
   process.on("unhandledRejection", (reason) => {
     console.log(chalk.red.bold("Unhandled Rejection:"), '\n', reason);
   });
