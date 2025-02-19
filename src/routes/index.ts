@@ -13,5 +13,5 @@ router
   .use(login)
   .use(test)
   .use(userImage)
-  .use(user);
+  .use(user)
 export default router;

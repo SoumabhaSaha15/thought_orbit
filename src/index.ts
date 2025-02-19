@@ -2,6 +2,7 @@ import cookie_parser from "cookie-parser";
 import layout from "express-ejs-layouts";
 import { GridFSBucket } from "mongodb";
 import router from "./routes/index.js";
+import error from "./routes/error.js";
 import { print } from "running-at";
 import { connect } from "mongoose";
 import express from "express";
@@ -28,6 +29,7 @@ try {
     })
     .use(layout)
     .use(router)
+    .use(error)
     .listen(process.env.PORT, () => print(process.env.PORT));
     
   process.on("unhandledRejection", (reason) => {
